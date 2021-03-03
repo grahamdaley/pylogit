@@ -319,18 +319,6 @@ def check_type_and_values_of_specification_dict(specification_dict,
                             total_msg = msg.format(key) + msg_2 + msg_3
                             raise ValueError(total_msg)
 
-                        elif group_item not in unique_alternatives:
-                            msg_1 = "{} in {} in specification_dict[{}]"
-                            msg_2 = " is not in long_format[alt_id_col]"
-                            total_msg = (msg_1.format(group_item, group, key) +
-                                         msg_2)
-                            raise ValueError(total_msg)
-                else:
-                    if group not in unique_alternatives:
-                        msg_1 = "{} in specification_dict[{}]"
-                        msg_2 = " is not in long_format[alt_id_col]"
-                        raise ValueError(msg_1.format(group, key) + msg_2)
-
         else:
             msg = "specification_dict[{}] must be 'all_same', 'all_diff', or"
             msg_2 = " a list."
