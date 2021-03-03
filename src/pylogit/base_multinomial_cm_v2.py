@@ -1213,10 +1213,10 @@ class MNDC_Model(object):
                                         column_names=all_names)
 
         # Store the variance-covariance matrix
-        # self._store_inferential_results(-1 * scipy.linalg.inv(self.hessian),
-        #                                 index_names=all_names,
-        #                                 attribute_name="cov",
-        #                                 column_names=all_names)
+        self._store_inferential_results(-1 * scipy.linalg.inv(self.hessian),
+                                        index_names=all_names,
+                                        attribute_name="cov",
+                                        column_names=all_names)
 
         # Store ALL of the estimated parameters
         self._store_inferential_results(np.concatenate(all_params, axis=0),
